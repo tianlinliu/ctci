@@ -1,7 +1,7 @@
 /* 8.1
  * Design the data structure for a generic deck of cards. Explain how you would
  * subclass the data structure to implement blackjack.
- */
+ */ 
 
 public abstract class Card {
 	 Suit suit;
