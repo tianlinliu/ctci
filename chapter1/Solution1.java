@@ -25,7 +25,7 @@ public class Solution1 {
 		assert (isUniqueArray(null) == true);
 		assert (isUniqueBit(null) == true);
         assert (isUniqueHash(null) == true);
-		
+		 
 		// normal test
         assert (isUniqueArray("aaaaa") == false);
         assert (isUniqueBit("aaaaa") == false);
