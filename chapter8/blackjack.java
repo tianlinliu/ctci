@@ -15,7 +15,7 @@ public abstract class Card {
 	 public abstract void value() {}
 	 
 }
-
+ 
 public enum Suit {
 	SPADE, HEART, DIAMOND, CLUB;
 }
