@@ -5,9 +5,8 @@
  */
 
  public class Solution3 {
-
     /**
-     * Copy the value and reference of next node to current one, then delete current
+     * Copy the value and reference of next node to current one, then delete next
      */
     public static void delete(Node node) {
         if (node == null) return;
@@ -21,5 +20,4 @@
         delete(head.next);
         Node.printList(head);
     }
-
  }
