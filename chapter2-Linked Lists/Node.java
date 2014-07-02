@@ -16,6 +16,16 @@ public class Node {
         return new Node(1, new Node(2, new Node(3)));
     }
 
+    public static Node build(int[] nums) {
+        Node dummyHead = new Node(-1);
+        Node current = dummyHead;
+        for (int n : nums) {
+            current.next = new Node(n);
+            current = current.next;
+        }
+        return dummyHead.next;
+    }
+
     public static void printList(Node head) {
         if (head == null) {
             System.out.println("Empty List.");
@@ -27,10 +37,5 @@ public class Node {
             }
             System.out.println();
         }
-    }
-
-    public static void main(String[] args) {
-        Node head = Node.creatOneTwoThree();
-        printList(head);
     }
 }
