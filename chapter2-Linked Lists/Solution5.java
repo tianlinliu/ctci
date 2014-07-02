@@ -7,45 +7,47 @@
 
 public class Solution5 {
     /**
-     * Iterate two linked lists simultaneously, add the second list node's value
-     * to the first one's. If the sum is greater than 9, add 1 to next node's
-     * value.
+     * Recusion.
+     * Base case: the next nodes of both lists are the end and carry = 0
+     * Recusive case:  add up the nodes' value and carry, set the next node's
+     *   value equals sum of next nodes.
      *
      * Time: O(n)
-     * Space: O(1)
      */
-    public static Node sum(Node head1, Node head2) {
-        if (head1 == null || head2 == null) {
-            return head1 == null ? head2 : head1;
+    public static Node sum(Node head1, Node head2, int carry) {
+        /* base case */
+        if (head1 == null && head2 == null && carry == 0) {
+            return null;
         }
 
-        Node head = null;
-        while (head1 != null && head2 != null) {
-            head.value = head1.value + head2.value;
-            if (head.value > 9) {
-                head.value =- 10;
-                head.next = new Node(1);
-            } else {
-                head.next = new Node(0);
-            }
-            head1 = head1.next;
-            head2 = head2.next;
-            head = head.next;
+        int result = carry;
+        if (head1 != null) {
+            result += head1.value;
+        }
+        if (head2 != null) {
+            result += head2.value;
         }
 
+        if (result > 9) {
+            result -= 10;
+            carry = 1;
+        } else {
+            carry = 0;
+        }
+        /* recusive case */
+        Node head = new Node(result);
         if (head1 != null || head2 != null) {
-            head1 == null ? Node tail = head2 : Node tail = head1;
-            head.value =+ tail.value;
-            if (head.value > 9) {
-
-            }
+            head.next = sum(head1 == null ? head1 : head1.next, head2 == null ?
+                head2 : head2.next, carry);
         }
         return head;
     }
 
     public static void main(String[] args) {
-        Node head1 = Node.creatOneTwoThree();
-        Node head2 = Node.creatOneTwoThree();
-        Node.printList(sum(head1, head2));
+        Node head1 = Node.build(new int[] {2, 2, 2});
+        Node head2 = Node.build(new int[] {8, 8, 8});
+        Node.printList(head1);
+        Node.printList(head2);
+        Node.printList(sum(head1, head2, 0));
     }
 }
