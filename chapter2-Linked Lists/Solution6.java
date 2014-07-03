@@ -7,7 +7,7 @@ public class Solution6 {
     /**
      *
      */
-    public static Node begin(Node head) {
+    public static Node findBeginning(Node head) {
 
     }
 }

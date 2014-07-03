@@ -40,10 +40,10 @@ public class Solution2 {
      * Recursive case: remove the head
      *
      * Time: O(n^2)
-     * Space: O(1)
      */
     public static Node findKthToLast2(Node head, int k) {
         if (head == null || k < 0) return null;
+
         if (length(head) == k) return head;
         return findKthToLast(head.next, k);
     }
