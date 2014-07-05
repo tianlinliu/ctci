@@ -4,7 +4,7 @@
  * given only access to that node.
  */
 
- public class Solution3 {
+ public class Solution3_delete {
     /**
      * Copy the value and reference of next node to current one, then delete next
      */

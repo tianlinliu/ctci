@@ -4,7 +4,7 @@
  */
 import java.util.HashSet;
 
-public class Solution1 {
+public class Solution1_removeDuplicates {
     /**
      * Traverse the list by pointer Node current, then travese the rest of the
      * linked list to delete other duplicated nodes.

@@ -4,7 +4,7 @@
  * less than x come before all nodes greater than or equal to x.
  */
 
-public class Solution4 {
+public class Solution4_partition {
     /**
      * Creat 2 linked lists, one is all the nodes less than x, one is greater or
      * equal oneds. Iterate the original list, add nodes to the end of their

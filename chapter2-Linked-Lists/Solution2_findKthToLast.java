@@ -3,7 +3,7 @@
  * Implement an algorithm to find the kth to last element of a singly linked list.
  */
 
-public class Solution2 {
+public class Solution2_findKthToLast {
     /**
      * *****Iterative Solution*****
      * Use 2 pointers: Node current and Node kBehind. kBehind is k nodes behind

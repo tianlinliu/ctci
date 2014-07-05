@@ -5,7 +5,7 @@
  * return the sum as a linked list.
  */
 
-public class Solution5 {
+public class Solution5_sum {
     /**
      * Recusion.
      * Base case: the next nodes of both lists are the end and carry = 0
