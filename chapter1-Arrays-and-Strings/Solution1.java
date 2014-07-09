@@ -1,9 +1,9 @@
 /**
-* Problem:
+* Problem 1.1:
 * Determine whether a string is unique.
 */
 
-public class Solution1 {
+public class Solution1_isUnique {
     /**
      * Solution:
      *
@@ -17,17 +17,17 @@ public class Solution1 {
 
     public static void main(String[] args) {
         // unique string returns true
-        assert (isUniqueArray("abcdef") == true);
+        assert (isUniqueChars("abcdef") == true);
         assert (isUniqueBit("abcdef") == true);
         assert (isUniqueHash("abcdef") == true);
 
         // empty string is unique.
-        assert (isUniqueArray(null) == true);
+        assert (isUniqueChars(null) == true);
         assert (isUniqueBit(null) == true);
         assert (isUniqueHash(null) == true);
 
         // normal test
-        assert (isUniqueArray("aaaaa") == false);
+        assert (isUniqueChars("aaaaa") == false);
         assert (isUniqueBit("aaaaa") == false);
         assert (isUniqueHash("aaaaa") == false);
 
