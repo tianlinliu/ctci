@@ -12,10 +12,6 @@ public class Node {
         this(value, null);
     }
 
-    public static Node creatOneTwoThree() {
-        return new Node(1, new Node(2, new Node(3)));
-    }
-
     public static Node build(int[] nums) {
         Node dummyHead = new Node(-1);
         Node current = dummyHead;

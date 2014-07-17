@@ -39,19 +39,20 @@ public class Solution2_findKthToLast {
      * Base case: the length of the linked list = k, return the head node
      * Recursive case: remove the head
      *
-     * Time: O(n^2)
+     * Time: O(n)
      */
     public static Node findKthToLast2(Node head, int k) {
         if (head == null || k < 0) return null;
 
-        if (length(head) == k) return head;
-        return findKthToLast(head.next, k);
+        int steps = length(head) - k;
+        while (steps > 0) {
+            head = head.next;
+            steps--;
+        }
+        return head;
     }
 
-    public static int length(Node head) {
-        if (head == null) {
-            return 0;
-        }
+    private static int length(Node head) {
         int count = 0;
         while (head.next != null) {
             count++;
@@ -61,8 +62,8 @@ public class Solution2_findKthToLast {
     }
 
     public static void main(String[] args) {
-        Node head = Node.creatOneTwoThree();
+        Node head = Node.build(new int[] {1, 2, 3, 4, 5});
         Node.printList(findKthToLast(head, 1));
-        Node.printList(findKthToLast2(head, 2));
+        Node.printList(findKthToLast2(head, 6));
     }
 }

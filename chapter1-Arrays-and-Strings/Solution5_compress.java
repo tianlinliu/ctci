@@ -26,8 +26,8 @@
             }
             builder.append(count);
         }
-        // if compressed string is not smaller than the original, return original string
         String result = builder.toString();
+        /* if compressed string is not smaller than the original, return original string */
         return result.length() >= str.length() ? str : result;
     }
 

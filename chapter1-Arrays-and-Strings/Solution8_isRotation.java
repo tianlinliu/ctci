@@ -18,7 +18,7 @@
 
     }
 
-    public static boolean isSubstring(String str, String sub) {
+    private static boolean isSubstring(String str, String sub) {
         return str.indexOf(sub) >= 0;
     }
 
