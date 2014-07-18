@@ -7,7 +7,7 @@
 public class Solution4_partition {
     /**
      * Creat 2 linked lists, one is all the nodes less than x, one is greater or
-     * equal oneds. Iterate the original list, add nodes to the end of their
+     * equal to it. Iterate the original list, add nodes to the end of their
      * lists then merge together.
      *
      * Time: O(n)
@@ -50,10 +50,35 @@ public class Solution4_partition {
         }
     }
 
+    public static Node partition_dummy(Node head, int x) {
+        Node dummyBefore = new Node(-1);
+        Node tailBefore = dummyBefore;
+        Node dummyAfter = new Node(-1);
+        Node tailAfter = dummyAfter;
+
+        while (head != null) {
+            if (head.value < x) {
+                tailBefore.next = head;
+                tailBefore = tailBefore.next;
+            } else {
+                tailAfter.next = head;
+                tailAfter = tailAfter.next;
+            }
+            head = head.next;
+        }
+
+        tailBefore.next = dummyAfter.next;
+        return dummyBefore.next;
+    }
+
     public static void main(String[] args) {
         Node head = new Node(9, new Node(5, new Node(2, new Node(7))));
         Node.printList(head);
-        Node.printList(partition(head, 5));
+        head = partition(head, 5);
+        Node.printList(head);
+        System.out.println("After partition function.");
+        Node.printList(head);
+        Node.printList(partition_dummy(head, 7));
     }
 
 }

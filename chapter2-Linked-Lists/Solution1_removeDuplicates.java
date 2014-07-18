@@ -14,6 +14,7 @@ public class Solution1_removeDuplicates {
      */
     public static Node removeDuplicates(Node head) {
         if (head == null) return null;
+
         Node current = head;
         while (current.next != null) {
             Node delete = current;

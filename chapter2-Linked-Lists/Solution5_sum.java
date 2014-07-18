@@ -3,6 +3,8 @@
  * single digit. The digits are stored in reverse order, such that the 1's digit
  * is at the head of the list. Write a function that adds the two numbers and
  * return the sum as a linked list.
+ * FOLLOW UP:
+ * Suppose the digits are stored in forward order. Repeat above problem.
  */
 
 public class Solution5_sum {
@@ -28,20 +30,18 @@ public class Solution5_sum {
             result += head2.value;
         }
 
-        if (result > 9) {
-            result -= 10;
-            carry = 1;
-        } else {
-            carry = 0;
-        }
         /* recusive case */
-        Node head = new Node(result);
+        Node head = new Node(result % 10);
         if (head1 != null || head2 != null) {
             head.next = sum(head1 == null ? head1 : head1.next, head2 == null ?
-                head2 : head2.next, carry);
+                head2 : head2.next, result >= 10 ? 1 : 0);
         }
         return head;
     }
+
+    /**
+     *
+     */
 
     public static void main(String[] args) {
         Node head1 = Node.build(new int[] {2, 2, 2});
