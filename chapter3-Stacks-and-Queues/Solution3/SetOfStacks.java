@@ -2,6 +2,10 @@
  * Question 3.:
  * Implement a data structure SetOfStacks that composed of several stacks and should
  * create a new stack once the previous one exceeds capacity.
+ *
+ * FOLLOW UP: ? -> to much codes
+ * Implement a function popAt(int index) which performs a pop operation on a
+ * specific substack.
  */
 import java.util.Stack;
 import java.util.ArrayList;
