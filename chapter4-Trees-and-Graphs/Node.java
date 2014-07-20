@@ -1,3 +1,4 @@
+/* Binary tree node */
 class Node {
     Node left;
     Node right;
@@ -15,5 +16,13 @@ class Node {
 
     public void printValue() {
         System.out.print(value + " ");
+    }
+
+    /* inorder */
+    public static void printTree(Node root) {
+        if (root == null) return;
+        printTree(root.left);
+        root.printValue();
+        printTree(root.right);
     }
 }
