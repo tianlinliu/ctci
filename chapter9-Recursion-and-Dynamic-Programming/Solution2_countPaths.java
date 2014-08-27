@@ -9,6 +9,8 @@
 
 public class Solution2_countPaths {
     public static int countPaths(int X, int Y) {
+        if (X <= 0 || Y <= 0) return 1;
 
+        return 1 + countPaths(X, Y - 1) + countPaths(X - 1, Y);
     }
 }
